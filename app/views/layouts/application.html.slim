@@ -1,0 +1,14 @@
+docktype html
+html
+  head
+    title
+      | taskleaf
+    = csrf_meta_tags
+    = csp_meta_tag 
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' 
+  body
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-ligh
+     .navbar-brand taskleaf
+    .container
+    = yield
