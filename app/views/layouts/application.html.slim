@@ -1,4 +1,4 @@
-docktype html
+doctype html
 html
   head
     title
@@ -9,6 +9,8 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' 
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-ligh
-     .navbar-brand taskleaf
+    / .navbar-brand taskleaf
     .container
-    = yield
+      - if flash.notice.present?
+        .alert.alert-success = flash.notice
+      = yield
